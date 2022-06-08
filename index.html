@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Appendchild</title>
+</head>
+<body>
+    <h1>Adionando a lista</h1>
+    
+    
+    <ul id="myList">
+        <li>Coffe</li>
+        <li>Tea</li>
+    </ul>
+    
+    <p>Clique no botão "Anexar" para adiconar o item na lista.</p>
+
+    
+    <input type="text" id="palavra">
+
+    <input type="radio" name="cores" value="blue">
+    Azul
+    <input type="radio" name="cores" value="red">
+    Vermelho
+    <input type="radio" name="cores" value="green">
+    Verde
+    
+    <button onclick="myfunction()">Anexar</button>
+
+    <script>
+        function myfunction(){
+            const node = document.createElement('li');
+
+            const cor = document.querySelector('input[name="cores"]:checked').value;
+
+            const novoValor = document.getElementById ('palavra').value
+
+            const textnode = document.createTextNode(novoValor);
+
+            node.appendChild(textnode);
+
+            document.getElementById("myList").appendChild(node);
+
+            node.style.color=cor
+        }
+    
+    </script>
+    
+</body>
+</html>
